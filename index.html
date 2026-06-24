@@ -1,70 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Water Tracker 💧</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      padding: 20px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    button {
-      padding: 10px 15px;
-      margin: 5px;
-      border: none;
-      border-radius: 10px;
-      background: #4CAF50;
-      color: white;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background: #45a049;
-    }
-
-    .progress {
-      width: 100%;
-      background: #ddd;
-      border-radius: 20px;
-      margin-top: 15px;
-    }
-
-    .progress-bar {
-      height: 20px;
-      background: #2196F3;
-      width: 0%;
-      border-radius: 20px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="box">
-    <h1>💧 Water Tracker</h1>
-
-    <h2 id="count">0 / 2000 ml</h2>
-
-    <button onclick="addWater(250)">+250ml</button>
-    <button onclick="addWater(500)">+500ml</button>
-    <br><br>
-    <button onclick="reset()">Reset</button>
-
-    <div class="progress">
+<div class="progress">
       <div class="progress-bar" id="bar"></div>
     </div>
   </div>
@@ -83,7 +17,7 @@ function update() {
 
 function addWater(amount) {
   total = parseInt(total) + amount;
-  if (total > 2000) total = 2000;
+  if (total > 2000) total = ;
   update();
 }
 
