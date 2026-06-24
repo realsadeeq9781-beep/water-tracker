@@ -1,10 +1,11 @@
 let goal = 2000;
-let current = localStorage.getItem("water") || 0;
+let current = parseInt(localStorage.getItem("water")) || 0;
 
 updateUI();
 
 function addWater(amount) {
-  current = parseInt(current) + amount;
+  current += amount;
+
   if (current > goal) current = goal;
 
   localStorage.setItem("water", current);
