@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Tracker</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #e0f7fa;
+    }
+
+    button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💧 Water Tracker</h1>
+
+<h2 id="progress">0 / 2000 ml</h2>
+
+<button onclick="addWater(250)">+250ml</button>
+<button onclick="addWater(500)">+500ml</button>
+
+<br><br>
+
+<button onclick="reset()">Reset</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
