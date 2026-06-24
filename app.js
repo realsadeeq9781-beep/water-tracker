@@ -1,10 +1,12 @@
-<let goal = 2000;
+let goal = 2000;
 let current = localStorage.getItem("water") || 0;
 
 updateUI();
 
 function addWater(amount) {
   current = parseInt(current) + amount;
+  if (current > goal) current = goal;
+
   localStorage.setItem("water", current);
   updateUI();
 }
@@ -16,10 +18,9 @@ function reset() {
 }
 
 function updateUI() {
-  document.getElementById("progress").innerText =
+  document.getElementById("count").innerText =
     current + " / " + goal + " ml";
 
-  if (current >= goal) {
-    alert("🎉 Ka cika burinka!");
-  }
+  let percent = (current / goal) * 100;
+  document.getElementById("bar").style.width = percent + "%";
 }
