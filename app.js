@@ -1,27 +1,25 @@
-let goal = 2000;
-let current = parseInt(localStorage.getItem("water")) || 0;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Tracker</title>
+</head>
+<body>
 
-updateUI();
+  <h1>Water Tracker 💧</h1>
 
-function addWater(amount) {
-  current += amount;
+  <h2 id="count">0 / 2000 ml</h2>
 
-  if (current > goal) current = goal;
+  <div style="width:100%; background:#ccc;">
+    <div id="bar" style="width:0%; height:20px; background:blue;"></div>
+  </div>
 
-  localStorage.setItem("water", current);
-  updateUI();
-}
+  <br>
 
-function reset() {
-  current = 0;
-  localStorage.setItem("water", current);
-  updateUI();
-}
+  <button onclick="addWater(250)">+250ml</button>
+  <button onclick="addWater(500)">+500ml</button>
+  <button onclick="reset()">Reset</button>
 
-function updateUI() {
-  document.getElementById("count").innerText =
-    current + " / " + goal + " ml";
+  <script src="app.js"></script>
 
-  let percent = (current / goal) * 100;
-  document.getElementById("bar").style.width = percent + "%";
-}
+</body>
+</html>
